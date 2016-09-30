@@ -1,0 +1,49 @@
+function startSetup(){
+	var canvasZero = document.getElementById('gameScreen');
+	if(canvasZero.getContext){
+		var canvas = canvasZero.getContext('2d');
+		canvas.beginPath();
+		canvas.arc(150, 150, 75, 0, 360);
+		canvas.fill();
+		canvas.arc(300, 350, 50, 0, 360);
+		canvas.fill();
+		canvas.beginPath();
+		canvas.fillStyle = "red";
+		canvas.moveTo(300, 100);
+		canvas.lineTo(300, 150);
+		canvas.lineTo(250, 150);
+		canvas.fill();
+		canvas.font = "30px Arial";
+		canvas.textAlign = "center";
+		canvas.fillStyle = "white";
+		canvas.fillText("Tokyo", 150, 160);
+		canvas.font = "20px Arial";
+		canvas.fillText("Tokyo", 300, 350); 
+		canvas.fillText("Bay", 300, 370);
+	}
+	var canvasOne = document.getElementById('diceOne');
+	if(canvasOne.getContext){
+		var diceCanvasOne = canvasOne.getContext('2d');
+		diceCanvasOne = fillRect(25, 25, 50, 50);
+	}
+	var canvasOne = document.getElementById('diceOne');
+	if(canvasOne.getContext){
+		var diceCanvasOne = canvasOne.getContext('2d');
+		diceCanvasOne = fillRect(25, 25, 50, 50);
+	}
+	var canvasOne = document.getElementById('diceOne');
+	if(canvasOne.getContext){
+		var diceCanvasOne = canvasOne.getContext('2d');
+		diceCanvasOne = fillRect(25, 25, 50, 50);
+	}
+	var canvasOne = document.getElementById('diceOne');
+	if(canvasOne.getContext){
+		var diceCanvasOne = canvasOne.getContext('2d');
+		diceCanvasOne = fillRect(25, 25, 50, 50);
+	}
+	var canvasOne = document.getElementById('diceOne');
+	if(canvasOne.getContext){
+		var diceCanvasOne = canvasOne.getContext('2d');
+		diceCanvasOne = fillRect(25, 25, 50, 50);
+	}
+}

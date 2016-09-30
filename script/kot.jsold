@@ -1,0 +1,38 @@
+var dicePosition = [[37, 30], [167, 30], [297, 32], [37, 160], [167, 162], [75, 50]];
+
+function startSetup(){
+	var canvasZero = document.getElementById('gameScreen');
+	if(canvasZero.getContext){
+		var canvas = canvasZero.getContext('2d');
+		canvas.drawImage(document.getElementById('templateBoard'), 0, 0, 450, 450);
+		canvas.drawImage(document.getElementById('templateMonster'), 500, 0, 100, 100);
+		canvas.drawImage(document.getElementById('templateMonster'), 500, 150, 100, 100);
+		canvas.drawImage(document.getElementById('templateMonster'), 500, 300, 100, 100);
+		canvas.drawImage(document.getElementById('templateMonster'), 600, 0, 100, 100);
+		canvas.drawImage(document.getElementById('templateMonster'), 600, 150, 100, 100);
+		canvas.drawImage(document.getElementById('templateMonster'), 600, 300, 100, 100);
+		canvas.drawImage(document.getElementById('templateMonster'), 75, 75, 100, 100);
+	}
+	for(var i = 1; i < 6; i++){
+		drawDice('dice' + i);
+		let fixDice = 'dice' + i;
+		document.getElementById(fixDice).addEventListener('click', function(){ return drawDice(fixDice);});
+	}
+}
+
+function drawDice(whichDice){
+	var canvas = document.getElementById(whichDice);
+	if(canvas.getAttribute('class')  == 'hold'){
+		var canvasDice = canvas.getContext('2d');
+		canvasDice.fillStyle = "white";
+		canvasDice.fillRect(20, 20, 60, 60);
+		canvasDice.drawImage(document.getElementById('templateDice'), dicePosition[whichDice.charAt(4)-1][0], dicePosition[whichDice.charAt(4)-1][1], 130, 130, 25, 25, 50, 50);
+		canvas.setAttribute("class", "roll");
+	} else {
+		var canvasDice = canvas.getContext('2d');
+		canvasDice.fillStyle = "green";
+		canvasDice.fillRect(20, 20, 60, 60);
+		canvasDice.drawImage(document.getElementById('templateDice'), dicePosition[whichDice.charAt(4)-1][0], dicePosition[whichDice.charAt(4)-1][1], 130, 130, 25, 25, 50, 50);
+		canvas.setAttribute("class", "hold");
+	}
+}
